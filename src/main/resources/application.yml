@@ -1,0 +1,21 @@
+server:
+  port: 9098
+
+gcp:
+  pubsub:
+    test:
+      subscription: gcp-demo-project-test-sub #use your gcp project subscriber
+      topic: gcp-demo-project-test-topic  #use your gcp project topic
+
+spring:
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/gcpdb #${MONGODB_URI}
+      database: gcpdb #${MONGODB_DBNAME}
+  cloud:
+    gcp:
+      project-id: buoyant-yew-232521 #your project id
+      credentials:
+        location: classpath:mygcpkey.json #your project key
+      pubsub:
+        enabled: true
